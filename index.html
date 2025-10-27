@@ -10,7 +10,6 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
-      font-family: sans-serif;
       background-color: #f0f0f0;
     }
     iframe {
@@ -21,61 +20,49 @@
       height: 100%;
       border: none;
     }
-    .loading-message {
-      text-align: center;
-      margin-top: 20%;
-      color: #555;
-    }
   </style>
 </head>
 <body>
 
   <iframe id="sertifikat-iframe"></iframe>
 
-  <div id="message" class="loading-message" style="display: none;">
-    </div>
-
-
   <script>
     (function() {
       // 1. Tentukan URL dasar Google Script Anda
       const baseUrl = "https://script.google.com/macros/s/AKfycbw-TxT85LXsBR9OgGZG8wwFmtZAKXyxVoCkgGzXqPf9IlTI2E5AABlV3xK9VgCz9Zqj/exec";
 
-      // ----------------------------------------------------
-      // PERUBAHAN UTAMA ADA DI SINI
-      // ----------------------------------------------------
-
       // 2. Dapatkan seluruh string kueri (misal: "?KODE_ANDA")
       const queryString = window.location.search;
       
       // 3. Ambil nilainya dengan menghapus tanda '?' di awal.
-      //    Gunakan slice(1) untuk mengambil semua karakter dari indeks 1 (karakter kedua)
       const codeValue = queryString ? queryString.slice(1) : null;
+
+      // 4. Siapkan variabel untuk URL iframe
+      let dynamicUrl;
+
+      // ----------------------------------------------------
+      // PERUBAHAN LOGIKA UTAMA ADA DI SINI
+      // ----------------------------------------------------
+      
+      // 5. Periksa apakah codeValue ada (tidak null dan tidak string kosong)
+      if (codeValue) {
+        // Jika ADA KODE: Buat URL dengan parameter CODE
+        // (Contoh: .../index.html?12345)
+        dynamicUrl = baseUrl + "?id=" + encodeURIComponent(codeValue);
+      } else {
+        // Jika TIDAK ADA KODE: Gunakan URL dasar saja
+        // (Contoh: .../index.html)
+        dynamicUrl = baseUrl;
+      }
 
       // ----------------------------------------------------
       // Akhir dari perubahan
       // ----------------------------------------------------
 
-      // 4. Temukan elemen iframe dan pesan
+      // 6. Temukan elemen iframe dan atur 'src'-nya
       const iframe = document.getElementById('sertifikat-iframe');
-      const messageDiv = document.getElementById('message');
+      iframe.src = dynamicUrl;
 
-      // 5. Periksa apakah codeValue ada (tidak null dan tidak string kosong)
-      if (codeValue) {
-        // Jika ADA: Gabungkan URL dasar dengan parameter 'CODE='
-        // PENTING: Google Script Anda tetap mengharapkan ?CODE=...
-        const dynamicUrl = baseUrl + "?id=" + encodeURIComponent(codeValue);
-        
-        // Atur 'src' iframe ke URL yang baru dibuat
-        iframe.src = dynamicUrl;
-
-      } else {
-        // Jika TIDAK ADA: Sembunyikan iframe dan tampilkan pesan error
-        iframe.style.display = 'none';
-        messageDiv.style.display = 'block';
-        // Tampilkan pesan error yang sesuai dengan format baru
-        messageDiv.innerHTML = '<h1>Kode tidak ditemukan.</h1><p>Harap gunakan URL dengan format: .../index.html?KODE_ANDA</p>';
-      }
     })();
   </script>
 
