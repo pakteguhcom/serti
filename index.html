@@ -64,7 +64,7 @@
       if (codeValue) {
         // Jika ADA: Gabungkan URL dasar dengan parameter 'CODE='
         // PENTING: Google Script Anda tetap mengharapkan ?CODE=...
-        const dynamicUrl = baseUrl + "?CODE=" + encodeURIComponent(codeValue);
+        const dynamicUrl = baseUrl + "?id=" + encodeURIComponent(codeValue);
         
         // Atur 'src' iframe ke URL yang baru dibuat
         iframe.src = dynamicUrl;
