@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Sertifikat</title>
     <style>
-        /* CSS untuk mengatur tampilan */
+        /* CSS masih sama persis dengan sebelumnya */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #004a99; /* Latar belakang biru tua */
+            background-color: #004a99;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
         }
-
         .login-card {
             background-color: #ffffff;
             padding: 2.5rem;
@@ -25,56 +24,47 @@
             width: 90%;
             max-width: 400px;
         }
-
         .login-icon {
-            /* Menggunakan SVG inline untuk ikon perisai/sertifikat */
             width: 60px;
             height: 60px;
-            color: #0056b3; /* Warna ikon biru */
+            color: #0056b3;
             margin-bottom: 1rem;
         }
-
         h2 {
             margin-top: 0;
             margin-bottom: 0.5rem;
             color: #333;
             font-size: 1.75rem;
         }
-
         .subtitle {
             color: #666;
             margin-bottom: 2rem;
             font-size: 1rem;
         }
-
         form {
             display: flex;
             flex-direction: column;
         }
-
         .input-group {
             text-align: left;
             margin-bottom: 1.5rem;
         }
-
         label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: #555;
         }
-
         input[type="text"] {
             width: 100%;
             padding: 0.8rem 1rem;
             border: 1px solid #ccc;
             border-radius: 8px;
-            box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
+            box-sizing: border-box;
             font-size: 1rem;
         }
-
         button {
-            background-color: #0056b3; /* Warna tombol biru */
+            background-color: #0056b3;
             color: white;
             border: none;
             padding: 0.9rem;
@@ -84,9 +74,8 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         button:hover {
-            background-color: #004a99; /* Warna tombol saat di-hover */
+            background-color: #004a99;
         }
     </style>
 </head>
@@ -94,18 +83,17 @@
 
     <div class="login-card">
         <svg class="login-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 1.25a1.75 1.75 0 0 0-1.75 1.75v.5c-.32.06-.63.15-.93.26l-.07.03-.04.02c-1.3.5-2.4 1.33-3.26 2.4l-.04.05c-.24.3-.47.6-.68.9L5.2 7.15a1.75 1.75 0 0 0-2.47 0 1.75 1.75 0 0 0 0 2.48l.01.01 1.4 1.4c-.16.31-.3.64-.43.98l-.04.1c-.5 1.3-1.33 2.4-2.4 3.26l-.05.04c-.3.24-.6.47-.9.68l-.01.03L2.27 16.3a1.75 1.75 0 0 0 0 2.47c.34.34.8.5 1.24.5s.9-.16 1.24-.5l.01-.01.01-.01L6.17 17.4l.1-.04c1.3-.5 2.4-1.33 3.26-2.4l.05-.04c.3-.24.6-.47.9-.68l.03-.01h.01c.34-.13.67-.27.98-.43l.1-.04 1.4 1.4.01.01a1.75 1.75 0 0 0 2.47 0 1.75 1.75 0 0 0 0-2.48l-.01-.01-1.4-1.4c.16-.31.3-.64.43-.98l.04-.1c.5-1.3 1.33-2.4 2.4-3.26l.05-.04c.3-.24.6-.47.9-.68l.01-.03L21.73 7.7a1.75 1.75 0 0 0 0-2.47 1.75 1.75 0 0 0-2.47 0l-.01.01-.01.01L17.83 6.6l-.1.04c-1.3.5-2.4 1.33-3.26 2.4l-.05.04c-.3.24-.6.47-.9.68l-.03.01h-.01c-.34.13-.67.27-.98.43l-.1.04-1.4-1.4-.01-.01V3a1.75 1.75 0 0 0-1.75-1.75Z M10.2 12.3a.75.75 0 0 1 1.05-.14l.08.06 3 2.25a.75.75 0 0 1-.9 1.2l-.08-.06L12 14.3l-1.58 1.18a.75.75 0 0 1-.9-1.2l.08-.06L10.2 12.3Z M12 3.5a.25.25 0 0 1 .25.25v.5a.75.75 0 0 0 .75.75h.5a.25.25 0 0 1 .25.25v1.44c-1.21.43-2.3.1-3.5 0V5.25a.25.25 0 0 1 .25-.25h.5a.75.75 0 0 0 .75-.75v-.5a.25.25 0 0 1 .25-.25Z"/>
+          <path d="M12 1.25a1.75 1.75 0 0 0-1.75 1.75v.5c-.32.06-.63.15-.93.26l-.07.03-.04.02c-1.3.5-2.4 1.33-3.26 2.4l-.04.05c-.24.3-.47.6-.68.9L5.2 7.15a1.75 1.75 0 0 0-2.47 0 1.75 1.75 0 0 0 0 2.48l.01.01 1.4 1.4c-.16.31-.3.64-.43.98l-.04.1c-.5 1.3-1.33 2.4-2.4 3.26l-.05.04c-.3.24-.6.47-.9.68l-.01.03L2.27 16.3a1.75 1.75 0 0 0 0 2.47c.34.34.8.5 1.24.5s.9-.16 1.24-.5l.01-.01.01-.01L6.17 17.4l.1-.04c-1.3-.5-2.4-1.33-3.26-2.4l-.05-.04c-.3-.24-.6-.47-.9-.68l-.03-.01h-.01c-.34-.13-.67-.27-.98-.43l-.1-.04-1.4 1.4-.01.01a1.75 1.75 0 0 0 2.47 0 1.75 1.75 0 0 0 0-2.48l-.01-.01-1.4-1.4c.16-.31.3-.64.43-.98l.04-.1c.5-1.3 1.33-2.4 2.4-3.26l.05-.04c.3-.24.6-.47.9-.68l.01-.03L21.73 7.7a1.75 1.75 0 0 0 0-2.47 1.75 1.75 0 0 0-2.47 0l-.01.01-.01.01L17.83 6.6l-.1.04c-1.3.5-2.4 1.33-3.26 2.4l-.05.04c-.3.24-.6.47-.9.68l-.03.01h-.01c-.34-.13-.67-.27-.98-.43l-.1.04-1.4-1.4-.01-.01V3a1.75 1.75 0 0 0-1.75-1.75Z M10.2 12.3a.75.75 0 0 1 1.05-.14l.08.06 3 2.25a.75.75 0 0 1-.9 1.2l-.08-.06L12 14.3l-1.58 1.18a.75.75 0 0 1-.9-1.2l.08-.06L10.2 12.3Z M12 3.5a.25.25 0 0 1 .25.25v.5a.75.75 0 0 0 .75.75h.5a.25.25 0 0 1 .25.25v1.44c-1.21.43-2.3.1-3.5 0V5.25a.25.25 0 0 1 .25-.25h.5a.75.75 0 0 0 .75-.75v-.5a.25.25 0 0 1 .25-.25Z"/>
         </svg>
 
         <h2>Cek Sertifikat</h2>
         <p class="subtitle">Silakan masukkan nomor sertifikat Anda untuk verifikasi.</p>
-
-        <form action="http://member.im-certification.com/" method="GET">
+        
+        <form id="cekSertifikatForm">
             <div class="input-group">
                 <label for="cert-number">Nomer Sertifikat</label>
                 <input type="text" 
                        id="cert-number" 
-                       name="NomerSertifikat" 
                        placeholder="Contoh: IMS001001" 
                        required>
             </div>
@@ -114,5 +102,29 @@
         </form>
     </div>
 
-</body>
+    <script>
+        // 1. Cari formulir berdasarkan ID-nya
+        const form = document.getElementById('cekSertifikatForm');
+
+        // 2. Tambahkan 'event listener' untuk 'submit'
+        form.addEventListener('submit', function(event) {
+            
+            // 3. Hentikan aksi 'submit' bawaan browser
+            event.preventDefault(); 
+            
+            // 4. Ambil nilai dari input field
+            const nomerSertifikat = document.getElementById('cert-number').value;
+
+            // 5. Amankan nilai untuk URL (mengganti spasi dgn %20, dll)
+            const encodedValue = encodeURIComponent(nomerSertifikat);
+            
+            // 6. Tentukan URL tujuan
+            const baseUrl = "http://member.im-certification.com/";
+            const targetUrl = baseUrl + "?" + encodedValue;
+
+            // 7. Arahkan (redirect) browser ke URL baru
+            window.location.href = targetUrl;
+        });
+    </script>
+    </body>
 </html>
